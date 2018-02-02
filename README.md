@@ -13,6 +13,9 @@ Just combine bootstrap's classes to short in use.
 <button class="x-btn-o-w-primary--lg">Button</button>
 ```
 
+### Mixed Components
+  - [x] Buttons
+
 ### Limitations
   - Increment of css file size!
     - `bootstrap.min.css 122k`
