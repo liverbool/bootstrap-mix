@@ -35,4 +35,4 @@ Just combine bootstrap's classes to short in use.
     - `bootstrap-mix.min.css 995k`
 
 ### TODO
-  - Reduce css file size!
+  - Reduce css file size!! (maybe make some bootstrap eg. `.btn, .btn-xx` to be abstraction with `%` placeholder, this mean `.btn, .btn-xx` will gone away!)
