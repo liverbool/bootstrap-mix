@@ -1,0 +1,42 @@
+{
+  "name": "bootstrap-mix",
+  "version": "1.0.0",
+  "description": "Just Bootstrap Mix.",
+  "style": "dist/css/bootstrap-mix.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liverbool/bootstrap-mix.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "mix",
+    "combine"
+  ],
+  "author": "Ishmael Doss",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liverbool/bootstrap-mix/issues"
+  },
+  "homepage": "https://github.com/liverbool/bootstrap-mix#readme",
+  "peerDependencies": {
+    "bootstrap": "^4.0.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^4.0.0",
+    "clean-css-cli": "^4.1.10",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.14.12",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^4.1.1"
+  },
+  "scripts": {
+    "css": "npm-run-all --parallel css-compile* --sequential css-prefix* css-minify*",
+    "css-compile": "node-sass --output-style expanded --precision 6 scss/mix.scss dist/css/bootstrap-mix.css && node-sass --output-style expanded --precision 6 scss/mix-grid.scss dist/css/bootstrap-grid-mix.css",
+    "css-minify": "cleancss --level 1 --output dist/css/bootstrap-mix.min.css dist/css/bootstrap-mix.css && cleancss --level 1 --output dist/css/bootstrap-grid-mix.min.css dist/css/bootstrap-grid-mix.css",
+    "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/css/*.css\" \"!dist/css/*.min.css\"",
+    "dist": "npm-run-all --parallel css",
+    "watch": "npm-run-all --parallel watch-css",
+    "watch-css": "nodemon --ignore js/ --ignore dist/ -e scss -x \"npm run css\""
+  },
+  "sass": "scss/mix.scss"
+}

@@ -1,0 +1,21 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+%x-btn-wide {
+  @extend .btn, .w-100;
+}
+
+// Alternate buttons
+@each $name, $color in $theme-colors {
+  .x-btn-#{$name} {
+    @extend .btn, .btn-#{$name};
+  }
+  .x-btn-w-#{$name} {
+    @extend .btn-#{$name}, %x-btn-wide;
+  }
+  .x-btn-o-#{$name} {
+    @extend .btn, .btn-outline-#{$name};
+  }
+  .x-btn-o-w-#{$name} {
+    @extend .btn-outline-#{$name}, %x-btn-wide;
+  }
+}
