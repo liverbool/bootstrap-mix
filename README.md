@@ -14,12 +14,25 @@ Just combine bootstrap's classes to short in use.
 ```
 
 ### Mixed Components
-  - [x] Buttons
+| x-  | BS Classes |
+| ------------- | ------------- |
+| .x-btn-{$theme}  | .btn, .btn-{$theme}  |
+| .x-btn-{$theme}--sm  | .btn, .btn-{$theme}, .btn-sm  |
+| .x-btn-{$theme}--lg  | .btn, .btn-{$theme}, .btn-lg  |
+| .x-btn-w-{$theme}  | .btn, .btn-{$theme}, .w-100  |
+| .x-btn-w-{$theme}--sm  | .btn, .btn-{$theme}, .w-100, .btn-sm  |
+| .x-btn-w-{$theme}--lg  | .btn, .btn-{$theme}, .w-100, .btn-lg  |
+| .x-btn-o-{$theme}  | .btn, .btn-outline-{$theme}  |
+| .x-btn-o-{$theme}--lg  | .btn, .btn-outline-{$theme}, .btn-lg  |
+| .x-btn-o-{$theme}--sm  | .btn, .btn-outline-{$theme}, .btn-sm  |
+| .x-btn-o-w-{$theme}  | .btn, .btn-outline-{$theme}, .w-100  |
+| .x-btn-o-w-{$theme}--sm  | .btn, .btn-outline-{$theme}, .w-100, .btn-sm  |
+| .x-btn-o-w-{$theme}--lg  | .btn, .btn-outline-{$theme}, .w-100, .btn-lg  |
 
 ### Limitations
   - Increment of css file size!
     - `bootstrap.min.css 122k`
-    - `bootstrap-mix.min.css 556k`
+    - `bootstrap-mix.min.css 995k`
 
 ### TODO
   - Reduce css file size!

@@ -23,5 +23,6 @@
 // Alternate buttons
 @each $color, $value in $theme-colors {
   @include x-make-btn($color);
+  @include x-make-btn($color, (key: '--sm', value: 'btn-sm'));
   @include x-make-btn($color, (key: '--lg', value: 'btn-lg'));
 }
