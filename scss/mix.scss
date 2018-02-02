@@ -1,21 +1,27 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-%x-btn-wide {
-  @extend .btn, .w-100;
+@mixin x-make-btn($colors, $modifier: (key: '', value: '')) {
+  $key: map_get($modifier, 'key');
+  $value: map_get($modifier, 'value');
+
+  @each $name, $color in $colors {
+    .x-btn-#{$name}#{$key} {
+      @extend .btn, .btn-#{$name}, .#{$value};
+    }
+    .x-btn-w-#{$name}#{$key} {
+      @extend .btn-#{$name}, .w-100, .#{$value};
+    }
+    .x-btn-o-#{$name}#{$key} {
+      @extend .btn, .btn-outline-#{$name}, .#{$value};
+    }
+    .x-btn-o-w-#{$name}#{$key} {
+      @extend .btn-outline-#{$name}, .w-100, .#{$value};
+    }
+  }
 }
 
 // Alternate buttons
-@each $name, $color in $theme-colors {
-  .x-btn-#{$name} {
-    @extend .btn, .btn-#{$name};
-  }
-  .x-btn-w-#{$name} {
-    @extend .btn-#{$name}, %x-btn-wide;
-  }
-  .x-btn-o-#{$name} {
-    @extend .btn, .btn-outline-#{$name};
-  }
-  .x-btn-o-w-#{$name} {
-    @extend .btn-outline-#{$name}, %x-btn-wide;
-  }
+@each $color, $value in $theme-colors {
+  @include x-make-btn($color);
+  @include x-make-btn($color, (key: '--lg', value: 'btn-lg'));
 }
